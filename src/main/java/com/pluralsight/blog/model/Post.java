@@ -21,6 +21,8 @@ public class Post {
     @Version private Long version;
 
 
+    @NotNull
+    @Size(min = 4, max = 100)
     private String title;
     @Column(length=1000000)
     @Lob
@@ -43,8 +45,6 @@ public class Post {
         super();
     }
 
-    @NotNull
-    @Size(min = 4, max = 100)
     public Post(String title, String body){//, Author author) {
         this();
         this.title = title;
